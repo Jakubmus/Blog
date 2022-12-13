@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+       <h1 class="logo">Blog<span>App</span></h1> 
+    </div>
+    <br>
+    <div class="post">
+    {% for post in posts %}
+        <span class="title">{{post.title}}</span> <br>
+        {{post.body}} <br>
+        {{post.date}}
+    {% endfor %}
+    </div>
+    <p id="site-name"><a href="{% url 'admin:index' %}">Add and Edit Post with Admin</a></p>
+</body>
+</html>
