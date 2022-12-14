@@ -8,7 +8,6 @@ class PostAdmin(admin.ModelAdmin):
     fieldsets = [
         ('ADDING POST', {'fields': ['title']}),
         (None, {'fields': ['body']}),
-        (None, {'fields': ['date']}),
     ]
     list_display = ('title', 'body', 'date')
 
