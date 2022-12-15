@@ -6,20 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'app/style.css' %}">
-    <title>Document</title>
+    <title>Post Detail</title>
 </head>
 <body>
     <div class="navbar">
-       <h1 class="logo">Blog<span>App</span></h1> 
+        <h1 class="logo">Blog<span>App</span></h1> 
     </div>
-    {% for post in posts %}    
-    <div class="post">
-        <h2><span class="title">{{post.title}}</span></h2>
-        {{post.body}} <br>
+    <a href="{% url 'base' %}" id="back"> Get back</a>
+    <div class="show">
+        <h2>{{post.title}}</h2>
         {{post.date}} <br>
-        <a href="{% url 'read' post.id %}">Read more</a> 
+        <center>{{post.body}}</center><br>
     </div>
-    {% endfor %}
-    <p class="admin"><a href="{% url 'admin:index' %}">Add and Edit Post with Admin</a></p>
 </body>
 </html>

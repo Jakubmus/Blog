@@ -9,6 +9,6 @@ class PostAdmin(admin.ModelAdmin):
         ('ADDING POST', {'fields': ['title']}),
         (None, {'fields': ['body']}),
     ]
-    list_display = ('title', 'body', 'date')
+    list_display = ('id','title', 'body', 'date')
 
 admin.site.register(Post, PostAdmin)
